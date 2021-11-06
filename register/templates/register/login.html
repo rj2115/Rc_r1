@@ -1,0 +1,25 @@
+<html>
+<head><title>Login Page!</title>
+<style>.er{color:red;}</style>
+</head>
+<body>
+ <h1 >LOGIN HERE!</h1>
+<form action="{% url 'que_page' %}" method="post" novalidate>
+{% csrf_token %}
+<label for ="username">Username</label>
+<input type="text" id="username" name="username"><BR><BR>
+<label for="password">Password</label>
+<input type="password" id="password" name="password"><BR><BR>
+<button type="submit">Login</button>
+
+
+</form>
+{% if messages %}
+{% for message in messages %}
+<small {% if message.tags %}class="{{message.tags}}" {% endif %}>{{ message}}</small>
+{% endfor %}
+{%endif%}
+<a href="{% url 'register' %}">Not registered?Then Register here!</a><br><br>
+
+</body>
+</html>
