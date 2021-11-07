@@ -18,7 +18,7 @@
       <input type="email" id="email" name="email"><br><br>
       <label for="password">Password</label>
       <input type="password" id="password" name="password"><br><br>
-      <label for="password1">Confirm Password</label>
+      <label for="password">Confirm Password</label>
       <input type="password" id="password1" name="password1"><br><br>
       
       
@@ -28,11 +28,7 @@
 {%endif%}
 If registered then Login
 <a href="{% url 'login' %}"> HERE</a>
-{% if messages %}
- {% for message in messages %}
- <small {% if message.tags %}class="{{message.tags}}" {% endif %}>{{ message}}</small>
- {% endfor %}
- {%endif%}
+
   </body>  
 
 </html>
